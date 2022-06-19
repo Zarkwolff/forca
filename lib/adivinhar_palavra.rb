@@ -12,17 +12,19 @@ class AdivinharPalavra
     Inicializacao.inicializar
     @palavra = SortearPalavra.sortear
     @venceu = false
+    @resultado = nil
   end
 
   def adivinhar(letra)
-    until @resultado == @palavra
-      @palavra.each |n|
+
+    @palavra.each do |n|
       if n == letra
-        @resultado.push(letra)
+        @resultado = letra
       else
-        @resultado.push("_")
+        @resultado = ("_")
       end
     end
-    puts "Parabéns, você acertou a palavra é #{resultado}"
   end
+
+
 end

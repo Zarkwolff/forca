@@ -3,7 +3,7 @@ require_relative 'lib/adivinhar_palavra'
 jogo = AdivinharPalavra.new
 
 until jogo.venceu
-  puts "Tente adivinhar qual palavra foi escolhida"
-  palavra = gets
-  puts jogo.adivinhar(palavra)
+  puts "Escolhi uma palavra, você consegue adivinhar qual é?"
+  letra = gets
+  puts jogo.adivinhar(letra)
 end
