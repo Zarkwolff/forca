@@ -1,0 +1,5 @@
+casa
+noite
+carro
+motocicleta
+avião
