@@ -6,7 +6,7 @@ class AdivinharPalavra
 
   attr_reader :palavra
   attr_reader :venceu
-  attr_reader :resultado
+  resultado = []
 
   def initialize
     Inicializacao.inicializar
@@ -16,15 +16,12 @@ class AdivinharPalavra
   end
 
   def adivinhar(letra)
-
-    @palavra.each do |n|
-      if n == letra
-        @resultado = letra
-      else
-        @resultado = ("_")
+  indice = 0
+    while indice < @palavra.length
+      while @palavra.include?(letra)
+        @resultado.push(letra)
       end
     end
+    puts @resultado
   end
-
-
 end
