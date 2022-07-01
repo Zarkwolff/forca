@@ -15,6 +15,7 @@ class SortearPalavra
 
         puts "Pronto!!"
         puts "A palavra escolhida possui #{ps.size} letras... Boa Sorte!!"
+        return ps
     end
   end
   

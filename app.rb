@@ -1,8 +1,7 @@
 require_relative 'lib/adivinhar_palavra'
-
+jogo = AdivinharPalavra.new
 loop do
-  nome = gets
-  jogo = AdivinharPalavra.jogar(nome)
+  jogo.jogar
   if quer_jogar
     break
   end
