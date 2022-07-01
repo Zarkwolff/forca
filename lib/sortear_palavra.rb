@@ -1,6 +1,8 @@
 class SortearPalavra
     def self.sortear
 
+      puts "Escolhendo uma palavra secreta..."
+
       pa = []
       ps = []
       
@@ -10,6 +12,9 @@ class SortearPalavra
         end
       end
         ps = pa.sample.chomp.split("")
+
+        puts "Pronto!!"
+        puts "A palavra escolhida possui #{ps.size} letras... Boa Sorte!!"
     end
   end
   
