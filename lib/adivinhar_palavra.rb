@@ -1,66 +1,51 @@
-require_relative 'inicializacao'
 require_relative 'sortear_palavra'
+require_relative 'inicializacao'
 
 class AdivinharPalavra
-  attr_reader :erros
-  attr_reader :pontuacao
-  attr_reader :palavra
-  :chutes == []
-  attr_reader :seu_chute
 
   def initialize
     Inicializacao.inicializar
-    @erros = 0
-    @pontuacao = 0
-    @chutes = nil
-    @palavra = SortearPalavra.sortear
-  end
-  
-  def tentar_adivinhar
-    puts "Chutes errados: #{@erros}"
-    puts "Chutes realizados: #{@chutes}"
-    puts "Entre com uma letra"
-    @seu_chute = gets.chomp
-    puts "Seu chute foi #{@seu_chute}. Será que você acertou?"
   end
 
-  def jogar_novamente
-    puts "Jogar Novamente? (S/N)"
-    quer_jogar = gets.chomp.upcase
-    nao_quero_jogar = quer_jogar == "N"
+  palavra_escolhida = SortearPalavra.sortear
+  palavra_tamanho = palavra_escolhida.size
+  pontuacao = 0
+  palavra_parcial = []
+  
+  palavra_tamanho.times do
+    palavra_parcial << " _ "
   end
+
+  puts palavra_parcial.join
 
   def jogar
-    while erros < palavra.size
-      chut = nil
-      tentativa = nil
-      
-      @seu_chute = tentar_adivinhar
-      chut = @seu_chute
+    
+    fim = false
 
-      tentativa = @seu_chute.size = 1
+    while fim == false
+      puts "Escolha uma letra:"
+      sua_letra = gets.chomp
 
-      if tentativa
-        letra = @palavra.count tentativa
-        if letra == 0
-          puts "Uhhh!! A letra informada não consta na palavra escolhida."
-          @erros += 1
-        else
-          puts "Uau!! A letra informada faz compõem a palavra escolhida #{letra} vezes."
+      aux = 0
+      @palavra_escolhida.each_char do |letra_palavra|
+        if @palavra_parcial[aux] == ' _ '
+          if letra_palavra == sua_letra
+            @palavra_parcial[aux] = sua_letra
+            @pontuacao += 100
+          else
+            @pontuacao -= 50
+          end
         end
+        aux += 1
+      end
+
+      if @palavra_parcial.join.count(" _ ") > 0
+        fim = false
+        puts @palavra_parcial.join
       else
-        acertou = chut == @palavra
-        if acertou
-          puts "Parabéns, você acertou!"
-          pontuação += 100
-          break
-        else
-          puts "Que pena, mas nem sempre acertamos..."
-          pontuacao -= 25
-          @erros += 1
-        end
+        fim = true
       end
     end
-    puts "Você ganhou até o momento #{pontuacao} pontos."
+    puts "Parabéns!! Você acertou, a palavra escolhida era #{@palavra_parcial.join}"
   end
 end

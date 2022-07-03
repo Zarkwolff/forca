@@ -3,19 +3,18 @@ class SortearPalavra
 
       puts "Escolhendo uma palavra secreta..."
 
-      pa = []
-      ps = []
+      palavra = []
       
       File.open(File.expand_path('../../palavras.txt', __FILE__), 'r') do |arq|
         while line = arq.gets
-          pa.push(line)
+          palavra.push(line)
         end
       end
-        ps = pa.sample.chomp.split("")
+        palavra_sorteada = palavra.sample.chomp
 
         puts "Pronto!!"
-        puts "A palavra escolhida possui #{ps.size} letras... Boa Sorte!!"
-        return ps
-    end
+        puts "A palavra escolhida!!"
+        return palavra_sorteada 
+    end 
   end
   
