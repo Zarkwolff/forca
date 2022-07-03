@@ -1,5 +1,16 @@
 casa
-noite
 carro
 motocicleta
 avião
+gato
+cachorro
+peixe
+pássaro
+amor
+paz
+caridade
+morte
+coração
+dia
+noite
+caixa
