@@ -1,6 +1,9 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    pastel (0.8.0)
+      tty-color (~> 0.5)
+    tty-color (0.6.0)
     tty-cursor (0.7.1)
     tty-spinner (0.9.3)
       tty-cursor (~> 0.7)
@@ -9,6 +12,7 @@ PLATFORMS
   x64-mingw-ucrt
 
 DEPENDENCIES
+  pastel
   tty-cursor
   tty-spinner
 
