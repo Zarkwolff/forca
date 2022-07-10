@@ -1,20 +1,13 @@
-require_relative 'lib/adivinhar_palavra'
+require_relative 'lib/menu'
 
-def novo_jogo
-  AdivinharPalavra.new
-end
-
-novo_jogo.jogar
-
-opcao = "S"
-while opcao == "S"
-  puts "Deseja jogar novamente? (S/N)"
-  opcao = gets.chomp
-
-  if opcao.upcase == "S"
-    novo_jogo.jogar
-  else
-    puts "Ok, até a proxima..."
-    system('exit')
-  end
+menu = Menu.new
+opc = 0
+until opc == 2
+  puts "============="
+  puts "FORCA VIKING"
+  puts "============="
+  puts "1 - Novo Jogo"
+  puts "2 - Sair"
+  opc = gets.chomp.to_i
+  menu.selecionar_opcoes(opc)
 end
