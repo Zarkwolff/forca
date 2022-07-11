@@ -59,5 +59,6 @@ class AdivinharPalavra
       end
     end
     puts cor.green("Parabéns!! Você acertou, a palavra escolhida era #{cor.blue(@palavra_parcial.join)}")
+    sleep(3)
   end
 end

@@ -3,7 +3,7 @@ class SortearPalavra
 
       palavra = []
       
-      File.open(File.expand_path('../../palavras.txt', __FILE__), 'r') do |arq|
+      File.open(File.expand_path("../../palavras.txt", __FILE__), 'r') do |arq|
         while line = arq.gets
           palavra.push(line)
         end

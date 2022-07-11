@@ -5,11 +5,12 @@ class Inicializacao
   def self.inicializar
     system('cls')
     cor = Pastel.new
-    spinner = TTY::Spinner::Multi.new("[:spinner] Forca Viking", format: :arrow, success_mark: cor.green("+"))
+    spinner = TTY::Spinner::Multi.new("[:spinner] Preparando o Jogo", format: :arrow, success_mark: cor.green("+"))
     
-    sp1 = spinner.register "[:spinner] indo até Asgard"
-    sp2 = spinner.register "[:spinner] Escolhendo uma palavra"
-    sp3 = spinner.register "[:spinner] Guardando a palvra dentro da caixa de Pandora"
+    sp1 = spinner.register "[:spinner] Iniciando os sistemas"
+    sp2 = spinner.register "[:spinner] Procurando uma palavra"
+    sp3 = spinner.register "[:spinner] Tomando um café, porque ninguém é de ferro"
+    sp4 = spinner.register "[:spinner] Memorizando a palavra."
 
     sp1.auto_spin.join(2)
     sp1.success
@@ -17,6 +18,8 @@ class Inicializacao
     sp2.success
     sp3.auto_spin.join(2)
     sp3.success
+    sp4.auto_spin.join(2)
+    sp4.success
     sleep(1)
     
     system('cls')
