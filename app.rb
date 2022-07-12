@@ -1,6 +1,8 @@
-require_relative 'lib/menu'
+require_relative 'lib/menu_principal'
+require_relative 'lib/menu_categoria'
 
-menu = Menu.new
+menu = MenuPrincipal.new
+categoria = MenuCategoria.new
 
 opc = 0
 
