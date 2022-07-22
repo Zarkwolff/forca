@@ -1,29 +1,47 @@
-require_relative 'adivinhar_palavra'
-require 'pastel'
+require_relative 'jogo'
+require_relative 'colorir'
+
 class Menu
 
-    
-    
     def novo_jogo
-        AdivinharPalavra.new
+        Jogo.new
+    end
+
+    def cor
+        Colorir.new
     end
 
     def mostra_opcoes
-        cor = Pastel.new
         system('cls')
-        puts cor.green("===============")
-        puts "FORCA DIVERSÃO"
-        puts cor.green("===============")
-        puts "1 - Novo Jogo"
-        puts "2 - Sair"
+        puts cor.verde("==================")
+        puts cor.ciano("ADIVINHA PALAVRA")
+        puts cor.verde("==================")
+        puts cor.ciano("1 - Novo Jogo")
+        puts cor.ciano("2 - Sair")
+    end
+
+    def mostrar_advertencia
+        system('cls')
+        puts cor.amarelo('================Atenção!!================')
+        puts cor.ciano('Eu reconheço acentuação das palavras!!!')
+        puts cor.amarelo('=========================================')
+        sleep(6)
+        system('cls')
+    end
+    
+    def mostrar_despedida
+        system('cls')
+        puts cor.azul('Até a próxima!!!')
     end
 
     def selecionar_opcoes(opc)
         if opc == 1
+            mostrar_advertencia
             novo_jogo.jogar
         end
+
         if opc == 2
-            puts "Até a próxima!!"
+            mostrar_despedida
             system(exit)
         end
     end
